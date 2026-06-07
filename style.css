@@ -223,6 +223,21 @@ main {
   margin-block-end: var(--section-gap);
 }
 
+/* Base styles for the image wrapper */
+.hero-feature__img-wrapper {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.hero-feature__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hero-feature__title {
   font-size: var(--fs-hero-title);
   color: var(--very-dark-blue);
@@ -375,7 +390,7 @@ main {
 }
 
 /* Media Queries */
-@media (min-width: 90rem) {
+@media (min-width: 64rem) {
   /* --- Navigation Overrides --- */
   .nav-toggle {
     display: none;
