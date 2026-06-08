@@ -15,11 +15,11 @@
   --font-main: "Inter", sans-serif;
 
   /* Font sizes */
-  --fs-body: 0.9375rem; /* 15px paragraph */
-  --fs-hero-title: clamp(2.5rem, 2.15rem + 1.5vw, 3.5rem);
-  --fs-btn: clamp(0.875rem, 0.83rem + 0.19vw, 1rem);
-  --fs-sidebar-title: clamp(2rem, 1.82rem + 0.75vw, 2.5rem);
-  --fs-sidebar-link: clamp(1.125rem, 1.08rem + 0.19vw, 1.25rem);
+  --fs-body: clamp(0.875rem, 0.85rem + 0.11vw, 0.9375rem);
+  --fs-hero-title: clamp(2.5rem, 2.15rem + 1.5vw, 3rem);
+  --fs-btn: clamp(0.875rem, 0.83rem + 0.19vw, 0.9375rem);
+  --fs-sidebar-title: clamp(2rem, 1.82rem + 0.75vw, 2rem);
+  --fs-sidebar-link: clamp(0.875rem, 0.83rem + 0.19vw, 1rem);
   --number: clamp(1.125rem, 0.904rem + 0.94vw, 1.75rem);
   --fs-trending: clamp(1rem, 0.956rem + 0.19vw, 1.125rem);
 
@@ -39,7 +39,7 @@
   --trending-content-gap: clamp(0.25rem, 0.17rem + 0.38vw, 0.5rem);
 
   /*   Padding */
-  --padding-container-y: clamp(1.75rem, 0.55rem + 5.1vw, 5.125rem);
+  --padding-container-y: clamp(1.75rem, 0.55rem + 5.1vw, 5rem);
 
   --sidebar-padding-y: clamp(1.5rem, 1.32rem + 0.75vw, 2rem);
   --sidebar-padding-x: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
@@ -111,7 +111,7 @@ body {
   width: 100%;
   max-width: 1110px;
   margin: 0 auto;
-  padding: var(--padding-container-y) 2rem;
+  padding-block: var(--padding-container-y);
   gap: var(--content-gap);
 }
 
@@ -222,21 +222,6 @@ main {
   margin-block-end: var(--section-gap);
 }
 
-/* Base styles for the image wrapper */
-.hero-feature__img-wrapper {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.hero-feature__img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .hero-feature__title {
   font-size: var(--fs-hero-title);
   color: var(--very-dark-blue);
@@ -269,8 +254,8 @@ main {
   justify-content: center;
   width: max-content;
   white-space: nowrap;
-  padding-block: 0.75em;
-  padding-inline: 1.25em;
+  padding-block: 0.5em;
+  padding-inline: 1em;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
