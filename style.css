@@ -39,7 +39,7 @@
   --trending-content-gap: clamp(0.25rem, 0.17rem + 0.38vw, 0.5rem);
 
   /*   Padding */
-  --padding-container-y: clamp(1.75rem, 0.55rem + 5.1vw, 5rem);
+  --padding-container-y: clamp(1.75rem, 0.55rem + 5.1vw, 4.5rem);
 
   --sidebar-padding: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
 
@@ -111,6 +111,7 @@ body {
   max-width: 1110px;
   margin: 0 auto;
   padding-block: var(--padding-container-y);
+  padding-inline: 1rem;
   gap: var(--content-gap);
 }
 
