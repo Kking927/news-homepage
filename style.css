@@ -16,7 +16,7 @@
 
   /* Font sizes */
   --fs-body: clamp(0.875rem, 0.85rem + 0.11vw, 0.9375rem);
-  --fs-hero-title: clamp(2rem, 1.65rem + 1.5vw, 2.5rem);
+  --fs-hero-title: clamp(2.5rem, 2.15rem + 1.5vw, 3rem);
   --fs-btn: clamp(0.875rem, 0.83rem + 0.19vw, 0.9375rem);
   --fs-sidebar-title: clamp(2rem, 1.82rem + 0.75vw, 2rem);
   --fs-sidebar-link: clamp(0.875rem, 0.83rem + 0.19vw, 1rem);
