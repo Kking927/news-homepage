@@ -108,10 +108,9 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1110px;
+  max-width: 68rem;
   margin: 0 auto;
   padding-block: var(--padding-container-y);
-  padding-inline: 1rem;
   gap: var(--content-gap);
 }
 
