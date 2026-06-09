@@ -333,8 +333,21 @@ main {
 .trending-articles__item {
   display: grid;
   grid-template-columns: 100px 1fr;
+  align-items: start;
   gap: var(--trending-img-gap, 1.5rem);
   width: 100%;
+}
+
+.trending-articles__img-wrapper {
+  width: 100px; 
+  overflow: hidden; 
+}
+
+.trending-articles__img {
+  width: 100%;
+  height: auto; 
+  max-height: max-content; 
+  object-fit: contain; 
 }
 
 .trending-articles__number {
