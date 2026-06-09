@@ -32,8 +32,8 @@
   --content-gap: clamp(1.125rem, 0.816rem + 1.31vw, 2rem);
   --header-gap: clamp(0.5rem, 0.191rem + 1.31vw, 1.375rem);
   --hero-gap: clamp(1rem, 0.83rem + 0.75vw, 1.5rem);
-  --section-gap: clamp(1.125rem, 0.729rem + 1.69vw, 2.25rem);
-  --sidebar-item-gap: clamp(0.5rem, 0.324rem + 0.75vw, 1rem);
+  --section-gap: clamp(1.125rem, 0.77rem + 1.5vw, 2rem);
+  --sidebar-item-gap: clamp(1rem, 0.83rem + 0.75vw, 1.5rem);
   --sidebar-internal-gap: 0.5rem;
   --trending-img-gap: clamp(0.5rem, 0.324rem + 0.75vw, 1rem);
   --trending-content-gap: clamp(0.25rem, 0.17rem + 0.38vw, 0.5rem);
@@ -42,7 +42,7 @@
   --padding-container-y: clamp(1.75rem, 0.55rem + 5.1vw, 4rem);
   --padding-container-x: clamp(0.5rem, 0.25rem + 1.5vw, 1rem);
 
---sidebar-padding: clamp(0.875rem, 0.725rem + 0.63vw, 1.25rem);
+  --sidebar-padding: clamp(0.75rem, 0.65rem + 0.5vw, 1rem);
 
   /*   Box Shadows */
   --mobile-nav-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
@@ -285,12 +285,11 @@ main {
   flex-direction: column;
   gap: var(--sidebar-internal-gap);
   border-block-end: 1px solid var(--dark-grayish-blue);
-  padding-block: var(--hero-gap);
+  padding-block: var(--sidebar-item-gap);
 }
 
 .new-articles__item:last-child {
   border-block-end: none;
-  padding-block-end: 0;
 }
 
 .new-articles__link {
@@ -339,15 +338,15 @@ main {
 }
 
 .trending-articles__img-wrapper {
-  width: 100px; 
-  overflow: hidden; 
+  width: 100px;
+  overflow: hidden;
 }
 
 .trending-articles__img {
   width: 100%;
-  height: auto; 
-  max-height: max-content; 
-  object-fit: contain; 
+  height: auto;
+  max-height: max-content;
+  object-fit: contain;
 }
 
 .trending-articles__number {
