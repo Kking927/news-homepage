@@ -152,7 +152,7 @@ body {
   bottom: 0;
   width: 70%;
   background-color: var(--off-white);
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 6rem var(--padding-container-x) 2rem var(--padding-container-x);
   z-index: 100;
   box-shadow: var(--mobile-nav-shadow);
 }
@@ -284,13 +284,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--sidebar-internal-gap);
-  border-bottom: 1px solid var(--dark-grayish-blue);
+  border-block-end: 1px solid var(--dark-grayish-blue);
   padding-block: var(--hero-gap);
 }
 
 .new-articles__item:last-child {
   border-block-end: none;
-  padding-bottom: 0;
+  padding-block-end: 0;
 }
 
 .new-articles__link {
@@ -336,12 +336,6 @@ main {
   gap: var(--trending-img-gap, 1.5rem);
   width: 100%;
 }
-
-.trending-articles__img-wrapper {
-  aspect-ratio: 200 / 254;
-  overflow: hidden;
-}
-
 
 .trending-articles__number {
   color: var(--soft-red);
