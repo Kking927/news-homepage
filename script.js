@@ -5,56 +5,66 @@ const navToggle = document.querySelector(".nav-toggle");
 const toggleImg = document.querySelector(".nav-toggle__img");
 const navMenu = document.getElementById("primary-nav");
 
+// Verified asset URLs from the project repository
 const menuIcon =
   "https://raw.githubusercontent.com/Kking927/news-homepage/238443ed50a3463be5a0fc3b2723efd7c9aaaff8/images/icon-menu.svg";
+
 const closeIcon =
   "https://raw.githubusercontent.com/Kking927/news-homepage/238443ed50a3463be5a0fc3b2723efd7c9aaaff8/images/icon-menu-close.svg";
 
-// Hamburger click event
 navToggle.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
 
+  // Update ARIA states for accessibility
   navToggle.setAttribute("aria-expanded", isOpen);
-  toggleImg.src = isOpen ? closeIcon : menuIcon;
   navToggle.setAttribute(
     "aria-label",
     isOpen ? "Close navigation menu" : "Open navigation menu"
   );
+
+  // Swap the hamburger icon image to the 'X' close icon and vice versa
+  toggleImg.src = isOpen ? closeIcon : menuIcon;
 });
 
 // ==========================================================================
-// Categories Dropdown & Universal Click Manager
+// Categories Dropdown Menu
 // ==========================================================================
-const dropdownLink = document.querySelector(".nav-menu__item--dropdown > .nav-menu__link");
-const dropdownMenu = document.querySelector(".dropdown-menu");
+const dropdownItem = document.querySelector(".nav-menu__item--dropdown");
 
-// Handle the "Categories" click directly
-dropdownLink.addEventListener("click", (e) => {
-  e.preventDefault(); 
-  e.stopPropagation(); // Stops the click from instantly firing the "click away" logic below
-  
-  const isExpanded = dropdownMenu.classList.toggle("is-active");
-  dropdownLink.setAttribute("aria-expanded", isExpanded);
-});
+if (dropdownItem) {
+  const dropdownLink = dropdownItem.querySelector(".nav-menu__link");
 
-// Universal Click Listener to handle closing the menu
-document.addEventListener("click", (e) => {
-  // Scenario A: Clicked inside the dropdown menu box (like on a sub-link)
-  // Scenario B: Clicked completely outside of both the link and the dropdown box
-  if (dropdownMenu.contains(e.target) || !dropdownLink.contains(e.target)) {
-    dropdownMenu.classList.remove("is-active");
-    dropdownLink.setAttribute("aria-expanded", "false");
-  }
-});
+  dropdownLink.addEventListener("click", (e) => {
+    // Prevent default anchor behavior and stop event bubbling
+    e.preventDefault();
+    e.stopPropagation();
+
+    const isExpanded = dropdownItem.classList.toggle("is-active");
+    dropdownLink.setAttribute("aria-expanded", isExpanded);
+  });
+
+  // Close the dropdown cleanly if a user clicks anywhere else on the screen
+  document.addEventListener("click", (e) => {
+    if (!dropdownItem.contains(e.target)) {
+      dropdownItem.classList.remove("is-active");
+      dropdownLink.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 // ==========================================================================
-// Auto-close Mobile Hamburger Overlay Drawer on Link Selection
+// Auto-Close Mobile Menu on Navigation Link Click
 // ==========================================================================
-const navLinks = document.querySelectorAll(".nav-menu__link:not(.nav-menu__item--dropdown > .nav-menu__link), .dropdown-menu__link");
+const navLinks = document.querySelectorAll(
+  ".nav-menu__link:not(.nav-menu__link--dropdown), .dropdown-menu__link"
+);
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
+    // Hide the drawer
     navMenu.classList.remove("is-open");
+
+    // Reset layout attributes back to closed state defaults
     navToggle.setAttribute("aria-expanded", "false");
     toggleImg.src = menuIcon;
     navToggle.setAttribute("aria-label", "Open navigation menu");
