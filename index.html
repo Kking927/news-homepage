@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,7 +22,7 @@
         <img src="https://raw.githubusercontent.com/Kking927/news-homepage/238443ed50a3463be5a0fc3b2723efd7c9aaaff8/images/logo.svg" alt="W. News Logo" aria-hidden="true">
       </a>
 
-      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <img class="nav-toggle__img" src="https://raw.githubusercontent.com/Kking927/news-homepage/238443ed50a3463be5a0fc3b2723efd7c9aaaff8/images/icon-menu.svg" alt="Menu Icon" aria-hidden="true">
       </button>
 
@@ -33,12 +33,13 @@
           <li class="nav-menu__item"><a href="#popular" class="nav-menu__link">Popular</a></li>
           <li class="nav-menu__item"><a href="#trending" class="nav-menu__link">Trending</a></li>
           <li class="nav-menu__item nav-menu__item--dropdown">
-            <a href="#categories" class="nav-menu__link" aria-expanded="false" aria-haspopup="true">
+            <button type="button" class="nav-menu__link nav-menu__link--dropdown" aria-expanded="false" aria-haspopup="true">
               Categories
+
               <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-            </a>
+            </button>
 
             <ul class="dropdown-menu">
               <li><a href="#tech" class="dropdown-menu__link">Technology</a></li>
